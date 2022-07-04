@@ -4,10 +4,15 @@
  * Return: Always 0 (Success)
  */
 int main(void)
+
 {char a;
+
 int i;
+
 long int li;
+
 long long int lli;
+
 float f;
 printf("Size of a char: %lu byte(s) \n", (unsigned long)sizeof(a));
 
