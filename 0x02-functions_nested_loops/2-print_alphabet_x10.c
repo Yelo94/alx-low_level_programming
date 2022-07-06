@@ -16,4 +16,3 @@ char abc;
  count++;
  -putchar('\n');
  }
- }
