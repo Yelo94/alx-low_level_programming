@@ -7,12 +7,15 @@
  */						
  void print_alpahabet_x10(void)
  {
- char i;
- int  j;
- for (j=0; j< 10; j++)
+ int count = 0;
+ while (count < 10)
  {
- for (i= 'a'; i <= 'z'; i++)
- _putchar(I);
+char abc;
+ for (abc = 'a';abc <= 'z'; abc++)
+ {
+ _putchar(abc);
+ }
+ count++;
  -putchar('\n');
  }
  }
