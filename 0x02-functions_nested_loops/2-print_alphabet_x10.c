@@ -12,6 +12,7 @@ char abc;
  for (abc = 'a'; abc <= 'z'; abc++)
  {
  _putchar(abc);
+ }
  count++;
- -putchar('\n');
+ _putchar('\n');
  }
