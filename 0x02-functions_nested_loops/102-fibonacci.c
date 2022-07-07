@@ -1,7 +1,9 @@
 #include"main.h"
 #include <stdio.h>
 /**
- * main - entry point
+ * main- entry point
+ * return value of main (0)
+ *return value of main is the first 50 fibonacci number
  * return always 0 (success)
  */
 int main(void)
