@@ -3,27 +3,23 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- *main - check the code for Holberton School students.
+ *main - randomly generate password
  *Return: Always 0.
  */
+
 int main(void)
 {
-int n;
-n = _atoi("98");
-printf("%d\n", n);
-n = _atoi("-402");
-printf("%d\n", n);
-n = _atoi("          ------++++++-----+++++--98");
-printf("%d\n", n);
-n = _atoi("214748364");
-printf("%d\n", n);
-n = _atoi("0");
-printf("%d\n", n);
-n = _atoi("Suite 402");
-printf("%d\n", n);
-n = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
-printf("%d\n", n);
-n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
-printf("%d\n", n);
+int pass, sum;
+
+srand(time(0));
+
+sum = 0;
+while (sum <= 2654)
+{
+pass = (rand() % 128);
+sum += pass
+printf("%c", pass);
+}
+printf("%c, 2771 -sum);
 return (0);
 }
