@@ -6,22 +6,29 @@
 */
 int _atoi(char *s)
 {
-int sign = 1;
-unsigned int total = 0;
-char null_flag = 0;
-while (*s)
+int c = 0;
+unsigned int ni = 0;
+int min = 1;
+int isi = 0;
+
+while (s[c])
 {
-if (*s == '-')
-sign *= -1;
-if (*s >= '0' && *s <= '9')
+if (s[c] == 45)
 {
-null_flag = 1;
-total = total * 10 + *s - '0';
+	min *= -1;
 }
-else if (null_flag)
-s++;
+while (s[c] >= 48 && s[c] <= 57)
+{
+isi = 1;
+ni = (ni * 10) + (s[c] - '0');
+c++;
 }
-if (sign < 0)
-total = (-total);
-return (total);
+if (isi == 1)
+{
+break;
+}
+c++;
+}
+ni *= min;
+return (ni);
 }
