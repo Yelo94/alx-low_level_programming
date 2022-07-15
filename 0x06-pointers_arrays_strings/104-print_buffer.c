@@ -45,6 +45,7 @@ printf(".");
 printf("\n");
 }
 }
+}
 else
 printf("\n");
 }
