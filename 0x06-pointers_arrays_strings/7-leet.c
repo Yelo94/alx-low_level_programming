@@ -1,29 +1,30 @@
-#include "main.h"
+#include "holberton.h"
 /**
- *puts_half - Prints half of a string
- *@str: The string to print
- *Return: void
- */
-void puts_half(char *str)
+ *leet - Encodes a string into 1337
+ *@s: The string to encode
+ *Return: The encoded string
+*/
+char *leet(char *s)
 {
-int j = 0;
-int k;
-while (str[j] != '\0')
+int a = 0, b = 0, l = 5;
+char r[5] = {'A', 'E', 'O', 'T', 'L'};
+char n[5] = {'4', '3', '0', '7', '1'};
+while (s[a]
 {
-j++;
-}
-if (j % 2 == 1)
+b = 0;
+while (b < l)
 {
-k = (j - 1) / 2;
-k += 1;
-}
-else
+if (s[a] == r[b] || s[a] - 32 == r[b])
 {
-k = j / 2;
+s[a] = n[b];
 }
-for (; k < j; k++)
-{
-_putchar(str[k]);
+b++;
 }
-_putchar('\n');
+b++;
 }
+a++;
+}
+return (s);
+}
+
+
