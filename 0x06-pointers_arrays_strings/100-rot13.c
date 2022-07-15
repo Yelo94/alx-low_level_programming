@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 /**
- *main - check the code
- *Return always zero
+ *rot13 - ...
+ *@s: ...
+ *Return...
  */
 char *rot13(char *s)
 {
