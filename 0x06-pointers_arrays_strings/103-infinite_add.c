@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *infinite_add - prints an integer as if it were a string
  *@n1: integer to print
