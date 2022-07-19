@@ -11,16 +11,16 @@
 char *_strchr(char *s, char c)
 {
 char *flag = NULL;
-if (s != Null)
-{
-	do {
-		if (*s == c)
-		{
-			flag = s;
-			break;
-		}
-	} while (*s++);
-}
 
+if (s != NULL)
+{
+do { 
+if (*s == c)
+{
+flag = s;
+break;	
+}
+} while (*s++);
+}
 return (flag);
 }
