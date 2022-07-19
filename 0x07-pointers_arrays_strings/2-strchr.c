@@ -1,11 +1,4 @@
-/*
- *File: 2-strchr.c
- *Auth: yelo malaye akpami
- */
-
-
 #include "main.h"
-
 /**
  *strchr - Locates a character in a string.
  *@s: The string to be searched.
