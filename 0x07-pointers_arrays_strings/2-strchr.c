@@ -11,7 +11,8 @@
 char *_strchr(char *s, char c)
 {
 char *flag = NULL;
-if (s != Null)
+
+if (s != NULL)
 {
 	do {
 		if (*s == c)
