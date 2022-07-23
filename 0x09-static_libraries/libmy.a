@@ -1,20 +1,112 @@
 !<arch>
-0-isupper.o/    0           0     0     644     0         `
-0-memset.o/     0           0     0     644     0         `
-0-strcat.o/     0           0     0     644     0         `
-100-atoi.o/     0           0     0     644     0         `
-1-isdigit.o/    0           0     0     644     0         `
-1-memcpy.o/     0           0     0     644     0         `
-1-strncat.o/    0           0     0     644     0         `
-2-strchr.o/     0           0     0     644     0         `
-2-strncpy.o/    0           0     0     644     0         `
-3-islower.o/    0           0     0     644     0         `
-3-puts.o/       0           0     0     644     0         `
-3-strcmp.o/     0           0     0     644     0         `
-3-strspn.o/     0           0     0     644     0         `
-4-isalpha.o/    0           0     0     644     0         `
-5-strstr.o/     0           0     0     644     0         `
-6-abs.o/        0           0     0     644     0         `
-9-strcpy.o/     0           0     0     644     0         `
-_putchar.o/     0           0     0     644     0         `
-4-strpbrk.o/    0           0     0     644     0         `
+0-isupper.c/    0           0     0     644     24        `
+int _isupper(int c)
+{
+}
+0-memset.c/     0           0     0     644     51        `
+char *_memset(char *s, char b, unsigned int n)
+{
+}
+
+0-strcat.c/     0           0     0     644     41        `
+char *_strcat(char *dest, char *src)
+{
+}
+
+100-atoi.c/     0           0     0     644     424       `
+#include <stdio.h>
+/**
+ *_atoi - a function that converts string to integer
+ *@s: An input string
+ *Return: integer from conversion
+ */
+int _atoi(char *s)
+{
+int sign = 1;
+unsigned int total = 0;
+char null_flag = 0;
+while (*s)
+{
+if (*s == '-')
+sign *= -1;
+if (*s >= '0' && *s <= '9')
+{
+	null_flag = 1;
+	total = total * 10 + *s - '0';
+}
+else if (null_flag)
+	break;
+	s++;
+	}
+if (sign < 0)
+	total = (-total);
+	return (total);
+}
+1-isdigit.c/    0           0     0     644     24        `
+int _isdigit(int c)
+{
+}
+1-memcpy.c/     0           0     0     644     57        `
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+}
+
+1-strncat.c/    0           0     0     644     49        `
+char *_strncat(char *dest, char *src, int n)
+{
+}
+
+2-strchr.c/     0           0     0     644     35        `
+char *_strchr(char *s, char c)
+{
+}
+
+2-strncpy.c/    0           0     0     644     49        `
+char *_strncpy(char *dest, char *src, int n)
+{
+}
+
+3-islower.c/    0           0     0     644     24        `
+int _islower(int c)
+{
+}
+3-puts.c/       0           0     0     644     26        `
+void _puts(char *str)
+{
+}
+3-strcmp.c/     0           0     0     644     36        `
+int _strcmp(char *s1, char *s2)
+{
+}
+3-strspn.c/     0           0     0     644     48        `
+unsigned int _strspn(char *s, char *accept)
+{
+}
+4-isalpha.c/    0           0     0     644     25        `
+int _isalpha(int c)
+{
+
+}
+
+5-strstr.c/     0           0     0     644     48        `
+char *_strstr(char *haystack, char *needle)
+{
+}
+6-abs.c/        0           0     0     644     20        `
+int _abs(int n)
+{
+}
+9-strcpy.c/     0           0     0     644     41        `
+char *_strcpy(char *dest, char *src)
+{
+}
+
+_putchar.c/     0           0     0     644     25        `
+int _putchar(char c)
+{
+}
+
+4-strpbrk.c/    0           0     0     644     42        `
+char *_strpbrk(char *s, char *accept)
+{
+}
