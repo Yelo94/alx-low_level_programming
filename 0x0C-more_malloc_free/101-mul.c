@@ -2,8 +2,10 @@
 #include <stdlib.h>
 /**
  *main - Check the code
- *@argc: number of arguments
- *@argv: arguments
+ *@argc:number of arguments
+ *@argv:arguments 
+ *Description:If the number of arguments is incorrect or one number 
+ *contains non-digits,the function exits with a status of 98.
  *Return: Nothing
  */
 int main(int argc, char **argv)
