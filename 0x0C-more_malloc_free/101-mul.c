@@ -15,11 +15,12 @@ void add_nums(char *final_prod, char *next_prod, int next_len);
 int find_len(char *str)
 {
 int len = 0;
+
 while (*str++)
 len++;
+
 return (len);
 }
-
 /**
  *create_xarray - Creates an array of chars and initializes it with
  *the character 'x'. Adds a terminating null byte.
@@ -51,28 +52,11 @@ char *iterate_zeroes(char *str)
 {
 while (*str && *str == '0')
 str++;
+
 return (str);
 }
 /**
- *get_digit - Converts a digit character to a corresponding int.
- *@c: The character to be converted.
- *Description: If c is a non-digit, the function
- *exits with a status of 98.
- *Return: The converted int.
- */
-int get_digit(char c)
-{
-int digit = c - '0';	
-if (digit < 0 || digit > 9)
-}
-printf("Error\n");
-exit(98);
-}
-return (digit);
-}
-
-/**
- *get_prod - Multiplies a string of numbers by a single digit.
+ *get_prod - multiplies a string of numbers by a single digit.
  *@prod: The buffer to store the result.
  *@mult: The string of numbers.
  *@digit: The single digit.
@@ -82,21 +66,21 @@ return (digit);
  */
 void get_prod(char *prod, char *mult, int digit, int zeroes)
 {
-int mult_len, num, tens = 0;	
+int mult_len, num, tens = 0;
+
 mult_len = find_len(mult) - 1;
-mult += mult_len;	
-	
+mult += mult_len;
+
 while (*prod)
 {
 *prod = 'x';
 prod++;
 }
 prod--;
-	
 while (zeroes--)
 {
 *prod = '0';
-prod--;
+prod--;								
 }
 for (; mult_len >= 0; mult_len--, mult--, prod--)
 {
@@ -104,7 +88,7 @@ if (*mult < '0' || *mult > '9')
 {
 printf("Error\n");
 exit(98);
-}       
+}
 num = (*mult - '0') * digit;
 num += tens;
 *prod = (num % 10) + '0';
@@ -113,7 +97,6 @@ tens = num / 10;
 if (tens)
 *prod = (tens % 10) + '0';
 }
-
 /**
  *add_nums - Adds the numbers stored in two strings.
  *@final_prod: The buffer storing the running final product.
@@ -150,16 +133,17 @@ if (tens)
 }
 /**
  *main - Multiplies two positive numbers.
- *@argv: The number of arguments passed to the program.
+ *@argv: the number of arguments passed to the program. 
  *@argc: An array of pointers to the arguments.
  *Description: If the number of arguments is incorrect or one number
  *contains non-digits, the function exits with a status of 98.
  *Return: Always 0.
  */
+
 int main(int argc, char *argv[])
 {
 char *final_prod, *next_prod;
-int size, index, digit, zeroes = 0;	
+int size, index, digit, zeroes = 0;
 if (argc != 3)
 {
 printf("Error\n");
