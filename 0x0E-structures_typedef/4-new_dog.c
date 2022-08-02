@@ -36,6 +36,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	unsigned int name_len = my_strlen(name), owner_len = my_strlen(owner);
 	dog_t *snoop_dogg;
+
 	snoop_dogg = malloc(sizeof(dog_t));
 	if (snoop_dogg)
 	{
