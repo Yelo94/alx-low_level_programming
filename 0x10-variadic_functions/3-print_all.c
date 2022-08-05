@@ -9,44 +9,44 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	char *temp;
-	int i = 0;
+va_list valist;
+char *temp_s;
+int i = 0, orders;
 
-	va_start(ap, format);
-	while (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
-	while (format[i])
-	{
-		switch (format[i])
-		{
-			case 'c':
-				printf("%c", (char) va_arg(ap, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(ap, int));
-				break;
-			case 'f':
-				printf("%f", (float) va_arg(ap, double));
-				break;
-			case 's':
-				temp = va_arg(ap, char*);
-				if (temp != NULL)
-				{
-					printf("%s", temp);
-					break;
-				}
-				printf("(nil)");
-				break;
-				if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' ||
-							format[i] == 's') && format[(i + 1)] != '\0')
-					printf(", ");
-				i++;
-		}
-		va_end(ap);
-		printf("\n");
-	}
+while (format && format[i])
+{
+va_start(valist, format);
+while (format[i])
+{
+orders = 1;
+switch (format[i++])
+{
+case 'c':
+printf("%c", va_arg(valist, int));
+break;
+case 'i':
+printf("%d", va_arg(valist, int));
+break;
+case 'f':
+printf("%f", va_arg(valist, double));
+break;
+case 's':
+temp_s = va_arg(valist, char*);
+if (temp_s)
+{
+printf("%s", temp_s);
+break;
+}
+printf("(nil)");
+break;
+default:
+orders = 0;
+break;
+}
+if (format[i] && orders)
+printf(", ");
+}
+va_end(valist);
+}
+printf("\n");
 }
