@@ -1,28 +1,103 @@
 #include "3-calc.h"
 /**
- *get_op_func - selects the correct function to perform operation
- *@s: input symbol
- *Return: pointer to another function the performs operation
+ *op_add - addition of a + b
+ *@a: input integer a
+ *@b: input integer b
+ *Return: sum
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-op_t ops[] = {
-{"+", op_add},
-{"-", op_sub},
-{"*", op_mul},
-{"/", op_div},
-{"%", op_mod},
-{NULL, NULL}
-};
-int i = 0;
-
-while (ops[i].op)
-{
-if (strcmp(ops[i].op, s))
-i++;
-else
-return (ops[i].f);
+return (a + b);
 }
-printf("Error\n");
-exit(99);
+
+/**
+ *
+ *  * op_sub - subtraction of a - b
+ *
+ *   * @a: input integer a
+ *
+ *    * @b: input integer b
+ *
+ *     * Return: difference
+ *
+ *      */
+
+int op_sub(int a, int b)
+
+{
+
+		return (a - b);
+
+}
+
+/**
+ *
+ *  * op_mul - multiplication of a * b
+ *
+ *   * @a: input integer a
+ *
+ *    * @b: input integer b
+ *
+ *     * Return: product
+ *
+ *      */
+
+int op_mul(int a, int b)
+
+{
+
+		return (a * b);
+
+}
+
+/**
+ *
+ *  * op_div - division of a / b
+ *
+ *   * @a: input integer a
+ *
+ *    * @b: input integer b
+ *
+ *     * Return: quotient
+ *
+ *      */
+
+int op_div(int a, int b)
+
+{
+
+		if (b != 0)
+
+					return (a / b);
+
+			printf("Error\n");
+
+				exit(100);
+
+}
+
+/**
+ *
+ *  * op_mod - modulo of a / b
+ *
+ *   * @a: input integer a
+ *
+ *    * @b: input integer b
+ *
+ *     * Return: remainder
+ *
+ *      */
+
+int op_mod(int a, int b)
+
+{
+
+		if (b != 0)
+
+					return (a % b);
+
+			printf("Error\n");
+
+				exit(100);
+
 }
