@@ -7,16 +7,21 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *one = head, *two = head;
-
-	while (one && two && two->next)
-	{
-		one = one->next;
-		two = two->next->next;
-		if (one == two)
-		{
-			return (one);
-		}
-	}
-	return (NULL);
+listint_t *temp = head, *check;	
+if (!head)
+return (NULL);
+if (head == head->next)
+return (head);
+while (temp)
+{
+temp = temp->next;
+check = head;
+while (temp && check != temp)
+{
+if (check == temp->next)
+return (check);
+check = check->next;
+}
+}
+return (temp);
 }
