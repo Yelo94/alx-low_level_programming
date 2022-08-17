@@ -7,9 +7,9 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *temp = head, *check;	
+listint_t *temp = head, *check;
 if (!head)
-return (NULL);
+	return (NULL);
 if (head == head->next)
 return (head);
 while (temp)
