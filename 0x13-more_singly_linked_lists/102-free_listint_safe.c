@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include "lists.h"
-#include <stdlib.h>
-
+t;                                                              
+hare = (hare->next)->next;                                      }        
+return (0);
+}
 /**
 **free_listint_safe - a function that frees a listint_t list safely (ie.
 **can free lists containing loops)
@@ -13,37 +13,73 @@
 **/
 size_t free_listint_safe(listint_t **h)
 {
-	size_t counter = 0;
-	listint_t *temp;
+	listint_t *tmp;
+	size_t nodes, index;
+	
+	nodes = looped_listint_count(*h);
 
-	temp = *h;
-	while (temp)
+	if(nodes == 0)
 	{
-		temp = *h;
-		temp = temp->next;
-		free_list(temp);
-		counter++;
+		for (; h != NULL && *h !=NULL; nodes++)
+		{
+			tmp = (*h)->next;
+			free(*h);
+			*h = tmp;
+		}
 	}
-	*h = NULL;
 
-	return (counter);
-}
+	else
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			tmp = (*h)->next;
+			free(*h);
+			*h = tmp;
+		}
+		*h = NULL;
+
+		return (nodes);
+	}
+
+#include "lists.h"
+
+size_t looped_listint_count(listint_t *head);
+size_t free_listint_safe(listint_t**h);
 
 /**
- * free_list - A function that frees a listint_t recursivel
- * @head: A pointer to the listint_t structure
- * return: nothing
- */
-void free_list(listint_t *head)
+ * *looped_listint - counts the number of unique nodes
+ *                  in a looped listint_t linked list.
+ *  *@head: pointer to the head of the listint_t to check. 
+ *  *
+ *  *return if the list is not looped - 0
+ *     otherwise - the number of unique nodes in the list.
+ * */
+size_t looped_listint_count(listint_t *head)
 {
-	listint_t *temp;
+	listint_t *tortoise, *hare;
+	size_t nodes = 1;
 
-	if (head)
+	if (head == NULL || head->next == NULL)
+		return (0);
+	tortoise = head->next;
+	hare = (head->next)->next;
+	while (hare)
 	{
-		temp = head;
-		temp = temp->next;
-		free(temp);
-		free_list(temp);
-	}
-	free(head);
-}
+		if (tortoise == hare)
+		{
+			tortoise = head;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+			}
+			return (nodes);
+		}
+		tortoise = tortoise->nex
