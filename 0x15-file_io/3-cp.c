@@ -5,13 +5,16 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 int safe_close(int);
+
 /**
  *main - Main function to copy files
  *@argc: The number of passed arguments
  *@argv: The pointers to array arguments
  *Return: 1 on success, exits on failure
  */
+
 int main(int argc, char *argv[])
 {
 char buffer[1024];
@@ -28,7 +31,7 @@ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 to_fd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-if (to_fd < 0)	
+if (to_fd < 0)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 safe_close(from_fd);
@@ -55,24 +58,25 @@ safe_close(from_fd);
 safe_close(to_fd);
 exit(99);
 }
-}										
+}
 error = safe_close(to_fd);
 if (error < 0)
 {
 safe_close(from_fd);
 exit(100);
 }
-
 error = safe_close(from_fd);
 if (error < 0)
 exit(100);
 return (0);
 }
+
 /**
  *safe_close - A function that closes a file and prints error when closed file
  *@description: Description error for closed file
  *Return: 1 on success, -1 on failure
  */
+
 int safe_close(int description)
 {
 int error;
