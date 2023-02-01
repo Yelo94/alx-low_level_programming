@@ -74,6 +74,7 @@ if (array[i] > value || check >= size)
 printf(" [%lu] and [%lu]\n", prev, i);																return (_bs(array, prev, i, value));
 }
 printf("Value checked array[%lu] = [%d]\n", i, array[i]);
-exponent++;																				prev = i;
+exponent++;																			
+prev = i;
 }
 }
